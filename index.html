@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let userInput = prompt("Enter a string:");
+function countECharacters(str) {
+  let count = 0;
+  for (let char of str) {
+    if (char.toLowerCase() === 'e') {
+      count++;
+    }
+  }
+  return count;
+}
+let eCount = countECharacters(userInput);
+alert("Number of 'e' characters: " + eCount);
+let Input = prompt("Enter a string:");
+let caseSensitive = confirm("Consider case sensitivity?");
+function isPalindrome(str, caseSensitive) {
+    if (!caseSensitive) {
+        str = str.toLowerCase();
+    }
+    str = str.replace(/[^a-z0-9]/gi, '');
+    return str === str.split('').reverse().join('');
+}
+if (isPalindrome(Input, caseSensitive)) {
+    alert("The string is a palindrome.");
+} else {
+    alert("The string is not a palindrome.");
+}
+
+
+function calculateCircleArea() {
+   
+   const radius = parseFloat(prompt("Enter the value of the circle's radius:"));
+   
+   if (isNaN(radius) || radius <= 0) {
+       alert("Please enter a valid positive number for the radius.");
+       return;
+   }
+   const area = Math.PI * Math.pow(radius, 2);
+   
+  
+   alert(`The area of the circle with radius ${radius} is ${area.toFixed(2)}.`);
+}
+calculateCircleArea()
+
+</script>
+</body>
+</html>
